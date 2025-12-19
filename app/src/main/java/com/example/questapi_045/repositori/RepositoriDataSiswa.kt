@@ -1,7 +1,7 @@
 package com.example.questapi_045.repositori
 
 import com.example.questapi_045.apiservice.ServiceApiSiswa
-import com.example.questapi_045.viewmodel.provider.DataSiswa
+import com.example.questapi_045.modeldata.DataSiswa
 
 interface RepositoryDataSiswa {
     suspend fun getDataSiswa(): List<DataSiswa>
