@@ -10,3 +10,8 @@ data class DataSiswa(
     val telpon : String
 )
 
+data class UIStateSiswa(
+    val detailSIswa: DetailSiswa = DetailSiswa(),
+    val isEntryValid: Boolean = false
+)
+
