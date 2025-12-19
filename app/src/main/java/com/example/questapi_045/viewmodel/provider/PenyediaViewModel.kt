@@ -1,41 +1,29 @@
 package com.example.questapi_045.viewmodel.provider
 
-import kotlinx.serialization.Serializable
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.createSavedStateHandle
+import androidx.lifecycle.viewmodel.CreationExtras
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
+import com.example.questapi_045.repositori.AplikasiDataSiswa
+import com.example.questapi_045.viewmodel.EntryViewModel
+import com.example.questapi_045.viewmodel.HomeViewModel
 
-@Serializable
-data class DataSiswa(
-    val id : Int,
-    val nama : String,
-    val alamat : String,
-    val telpon : String
-)
+fun CreationExtras.aplikasiDataSiswa(): AplikasiDataSiswa =
+    (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY]
+            as AplikasiDataSiswa)
 
-data class UIStateSiswa(
-    val detailSIswa: DetailSiswa = DetailSiswa(),
-    val isEntryValid: Boolean = false
-)
-
-data class DetailSiswa(
-    val id : Int = 0,
-    val nama : String = "",
-    val alamat : String = "",
-    val telpon : String = ""
-)
-fun DetailSiswa.toDataSiswa() : DataSIswa = DataSiswa(
-    id = id,
-    nama = nama,
-    alamat = alamat,
-    telpon = telpon
-)
-
-fun DataSiswa.toUiStateSiswa(isEntryValid: Boolean = false): UIStateSiswa = UIStateSiswa(
-    detailSiswa = this.toDetailSiswa(),
-    isEntryValid = isEntryValid
-)
-
-fun DataSiswa.toDetailSiswa(): DetailSiswa = DetailSiswa(
-    id = id,
-    nama = nama,
-    alamat = alamat,
-    telpon = telpon
-)
+object PenyediaViewModel {
+    val Factory = viewModelFactory {
+        initializer {
+            HomeViewModel(
+                aplikasiDataSiswa().container.repositoriDataSiswa
+            )
+        }
+        initializer {
+            EntryViewModel(
+                aplikasiDataSiswa().container.repositoriDataSiswa
+            )
+        }
+    }
+}
