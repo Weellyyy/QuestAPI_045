@@ -3,9 +3,11 @@ package com.example.questapi_045.uicontroller
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.questapi_045.uicontroller.route.DestinasiEntry
 import com.example.questapi_045.uicontroller.route.DestinasiHome
 import com.example.questapi_045.view.EntrySiswaScreen
@@ -18,20 +20,35 @@ fun DataSiswaApp(navController: NavHostController = rememberNavController(),
 }
 
 @Composable
-fun HostNavigasi(navController: NavHostController,
-                 modifier: Modifier = Modifier) {
-    NavHost(navController = navController,
+fun HostNavigasi(
+    navController: NavHostController,
+    modifier: Modifier = Modifier
+){
+    NavHost(
+        navController = navController,
         startDestination = DestinasiHome.route,
-        modifier = Modifier) {
+        modifier = modifier
+    ){
         composable(DestinasiHome.route) {
-            HomeScreen(navigateToItemEntry = {
-                navController.navigate(DestinasiEntry.route) },
+            HomeScreen(
+                navigateToItemEntry = { navController.navigate(DestinasiEntry.route) },
                 navigateToItemUpdate = {
-                    navController.navigate("${DestinasiEntry.route}/${it}")
-                })
+                    navController.navigate("${DestinasiDetail.route}/$it")
+                }
+            )
         }
-        composable(DestinasiEntry.route) {
-            EntrySiswaScreen(navigateBack = { navController.navigate(DestinasiHome.route)})
+
+        composable(DestinasiEntry.route){
+            EntrySiswaScreen(
+                navigateBack = { navController.navigate(DestinasiHome.route) }
+            )
         }
+
+        composable(
+            DestinasiDetail.routeWithArgs,
+            arguments = listOf(navArgument(DestinasiDetail.itemIdArg) {
+                type = NavType.IntType
+            })
+        )
     }
 }
