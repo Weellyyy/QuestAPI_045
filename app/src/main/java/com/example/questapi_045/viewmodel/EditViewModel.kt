@@ -11,6 +11,7 @@ import com.example.questapi_045.modeldata.UIStateSiswa
 import com.example.questapi_045.modeldata.toDataSiswa
 import com.example.questapi_045.modeldata.toUiStateSiswa
 import com.example.questapi_045.repositori.RepositoryDataSiswa
+import com.example.questapi_045.uicontroller.route.DestinasiDetail
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
