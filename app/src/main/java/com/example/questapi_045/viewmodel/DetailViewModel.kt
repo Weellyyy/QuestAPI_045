@@ -1,12 +1,18 @@
 package com.example.questapi_045.viewmodel
 
+import android.annotation.SuppressLint
+import retrofit2.HttpException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.questapi_045.modeldata.DataSiswa
 import com.example.questapi_045.repositori.RepositoryDataSiswa
+import kotlinx.coroutines.launch
+import okio.IOException
+import retrofit2.Response
 
 sealed interface StatusUIDetail{
     data class Success(val satusiswa: DataSiswa) : StatusUIDetail
@@ -21,4 +27,19 @@ RepositoryDataSiswa): ViewModel(){
     init {
         getSatuSiswa()
     }
+    fun getSatuSiswa(){
+        viewModelScope.launch {
+            statusUIDetail = StatusUIDetail.Loading
+            statusUIDetail = try {
+                StatusUIDetail.Success(satusiswa = repositoryDataSiswa.getSatuSiswa(idSiswa))
+            }
+            catch (e: IOException){
+                StatusUIDetail.Error
+            }
+            catch (e: HttpException){
+                StatusUIDetail.Error
+            }
+        }
+    }
+
 }
