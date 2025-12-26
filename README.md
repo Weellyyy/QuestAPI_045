@@ -1,23 +1,45 @@
-Home : 
-<img width="525" height="1114" alt="image" src="https://github.com/user-attachments/assets/30206154-27db-4dca-bda8-4085ba921a54" />
+Halaman Home
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/30206154-27db-4dca-bda8-4085ba921a54" width="300"/>
+</p>
+<p align="center"><em>Tampilan awal halaman Home</em></p>
 
-Entry : 
-<img width="524" height="1112" alt="image" src="https://github.com/user-attachments/assets/dc6f7c1e-996a-49b8-8d4a-ee1cbd87fefb" />
+---
 
-Setelah Entry: 
-<img width="549" height="1119" alt="image" src="https://github.com/user-attachments/assets/1cd6af64-c8e7-4f0e-b0c9-429334998676" />
+Halaman Entry Data
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/dc6f7c1e-996a-49b8-8d4a-ee1cbd87fefb" width="300"/>
+</p>
+<p align="center"><em>Form untuk Tambah data</em></p>
 
-Edit : 
-<img width="528" height="1117" alt="image" src="https://github.com/user-attachments/assets/5281b0e1-fb23-4007-ab1f-8eabf44cdc7f" />
+---
 
-Hapus : 
-<img width="544" height="1111" alt="image" src="https://github.com/user-attachments/assets/b00547d3-db35-4d6f-a42c-1a3eb8101bdc" />\
+Halaman Home Setelah Entry Data
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1cd6af64-c8e7-4f0e-b0c9-429334998676" width="300"/>
+</p>
+<p align="center"><em>Data berhasil ditambahkan dan tampil di halaman Home</em></p>
 
-Halaman Home setelah Edit dan Delete : 
-<img width="532" height="1118" alt="image" src="https://github.com/user-attachments/assets/3a4f3941-038c-4beb-ad0a-ae0335bee4be" />
+---
 
+Halaman Edit Data
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5281b0e1-fb23-4007-ab1f-8eabf44cdc7f" width="300"/>
+</p>
+<p align="center"><em>Proses edit data</em></p>
 
+---
 
+Proses Hapus Data
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b00547d3-db35-4d6f-a42c-1a3eb8101bdc" width="300"/>
+</p>
+<p align="center"><em>Validasi Hapus data</em></p>
 
+---
 
-
+Halaman Home Setelah Edit dan Delete
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3a4f3941-038c-4beb-ad0a-ae0335bee4be" width="300"/>
+</p>
+<p align="center"><em>Halaman Home Setelah data berhasil di delete dan di edit</em></p>
